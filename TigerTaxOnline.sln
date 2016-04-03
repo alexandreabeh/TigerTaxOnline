@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerTaxOnline", "TigerTaxOnline\TigerTaxOnline.csproj", "{5009DE9A-BB57-48EA-8955-A6130AD481F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerTaxOnline.Tests", "TigerTaxOnline.Tests\TigerTaxOnline.Tests.csproj", "{83509C4B-D1AF-48D1-A446-C2519E83C100}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{B09BA1EC-80F8-428C-B1FE-7DA4CEA23B02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{AFFA6D37-4463-4DE0-8BC2-FFF06C437E73}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F0AD53FA-2A07-4BEA-8F2D-B9FA3176E97B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\TigerTaxOnline.json = PublishScripts\Templates\TigerTaxOnline.json
+		PublishScripts\Templates\TigerTaxOnline.param.dev.json = PublishScripts\Templates\TigerTaxOnline.param.dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbUp", "DbUp\DbUp.csproj", "{0A8AF93F-DA9C-4236-9087-0DA21FC7BA16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5009DE9A-BB57-48EA-8955-A6130AD481F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5009DE9A-BB57-48EA-8955-A6130AD481F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5009DE9A-BB57-48EA-8955-A6130AD481F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5009DE9A-BB57-48EA-8955-A6130AD481F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83509C4B-D1AF-48D1-A446-C2519E83C100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83509C4B-D1AF-48D1-A446-C2519E83C100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83509C4B-D1AF-48D1-A446-C2519E83C100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83509C4B-D1AF-48D1-A446-C2519E83C100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8AF93F-DA9C-4236-9087-0DA21FC7BA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8AF93F-DA9C-4236-9087-0DA21FC7BA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8AF93F-DA9C-4236-9087-0DA21FC7BA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8AF93F-DA9C-4236-9087-0DA21FC7BA16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFFA6D37-4463-4DE0-8BC2-FFF06C437E73} = {B09BA1EC-80F8-428C-B1FE-7DA4CEA23B02}
+		{F0AD53FA-2A07-4BEA-8F2D-B9FA3176E97B} = {B09BA1EC-80F8-428C-B1FE-7DA4CEA23B02}
+	EndGlobalSection
+EndGlobal

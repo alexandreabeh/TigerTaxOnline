@@ -210,3 +210,11 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# Other sensitive info
+Web.config
+Web.Debug.config
+Web.Release.config
+TigerTaxOnline.json
+TigerTaxOnline.param.dev.json
+tigertaxonline.pubxml
