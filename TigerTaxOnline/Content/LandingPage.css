@@ -20,6 +20,12 @@ footer ul.navbar-nav {
     float: none;
 }
 
+li.footer {
+    text-align: center;
+    float: none;
+    padding-right: 40px;
+}
+
 footer .navbar-nav .footer {
     text-align: center;
     padding-top: 1%;
