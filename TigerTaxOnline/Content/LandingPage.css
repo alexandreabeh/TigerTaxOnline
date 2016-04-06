@@ -18,12 +18,12 @@
 
 footer ul.navbar-nav {
     float: none;
+    padding-right: 40px;
 }
 
 li.footer {
     text-align: center;
     float: none;
-    padding-right: 40px;
 }
 
 footer .navbar-nav .footer {
