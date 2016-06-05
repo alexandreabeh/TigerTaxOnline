@@ -1,4 +1,4 @@
-namespace TigerTaxOnline
+namespace TigerTaxOnline.Classes
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace TigerTaxOnline
             AssignedRules = new HashSet<AssignedRule>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int RuleId { get; set; }
 
         public int UserId { get; set; }
@@ -38,6 +38,6 @@ namespace TigerTaxOnline
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignedRule> AssignedRules { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual User Users { get; set; }
     }
 }

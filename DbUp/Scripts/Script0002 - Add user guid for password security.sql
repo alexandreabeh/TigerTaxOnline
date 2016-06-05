@@ -1,0 +1,2 @@
+--ALTER TABLE Users
+--ADD UserGuid uniqueidentifier NULL

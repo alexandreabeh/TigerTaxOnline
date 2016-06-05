@@ -1,4 +1,4 @@
-namespace TigerTaxOnline
+namespace TigerTaxOnline.Classes
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace TigerTaxOnline
 
     public partial class Entry
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int EntryId { get; set; }
 
         public int RecordId { get; set; }
@@ -29,8 +29,8 @@ namespace TigerTaxOnline
         [StringLength(1000)]
         public string Other { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category Categories { get; set; }
 
-        public virtual Record Record { get; set; }
+        public virtual Record Records { get; set; }
     }
 }

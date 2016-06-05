@@ -1,4 +1,4 @@
-namespace TigerTaxOnline
+namespace TigerTaxOnline.Classes
 {
     using System;
     using System.Data.Entity;
@@ -23,37 +23,37 @@ namespace TigerTaxOnline
         {
             modelBuilder.Entity<Category>()
                 .HasMany(e => e.Categories1)
-                .WithOptional(e => e.Category1)
+                .WithOptional(e => e.Categories2)
                 .HasForeignKey(e => e.ParentCategoryId);
 
             modelBuilder.Entity<Record>()
                 .HasMany(e => e.AssignedRules)
-                .WithRequired(e => e.Record)
+                .WithRequired(e => e.Records)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Record>()
                 .HasMany(e => e.Categories)
-                .WithRequired(e => e.Record)
+                .WithRequired(e => e.Records)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Record>()
                 .HasMany(e => e.Entries)
-                .WithRequired(e => e.Record)
+                .WithRequired(e => e.Records)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Rule>()
                 .HasMany(e => e.AssignedRules)
-                .WithRequired(e => e.Rule)
+                .WithRequired(e => e.Rules)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Records)
-                .WithRequired(e => e.User)
+                .WithRequired(e => e.Users)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Rules)
-                .WithRequired(e => e.User)
+                .WithRequired(e => e.Users)
                 .WillCascadeOnDelete(false);
         }
     }

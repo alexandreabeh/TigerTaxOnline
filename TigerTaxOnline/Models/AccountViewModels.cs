@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc.Routing.Constraints;
+using System.Web.UI.WebControls;
 
 namespace TigerTaxOnline.Models
 {
@@ -64,6 +67,27 @@ namespace TigerTaxOnline.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be between {2} and {1} characters long.", MinimumLength = 2)]
+        [DataType(DataType.Text)]
+      //  [RegularExpression("^\\p{L}+$", ErrorMessage = "The {0} must only contain letters.")]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be between {2} and {1} characters long.", MinimumLength = 2)]
+        [DataType(DataType.Text)]
+        //[RegularExpression("^\\p{L}+$", ErrorMessage = "The {0} must only contain letters.")]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be between {2} and {1} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Text)]
+//TODO: regex rules
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

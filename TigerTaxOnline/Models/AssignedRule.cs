@@ -1,4 +1,4 @@
-namespace TigerTaxOnline
+namespace TigerTaxOnline.Classes
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace TigerTaxOnline
 
     public partial class AssignedRule
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int AssignedRuleId { get; set; }
 
         public int RecordId { get; set; }
@@ -17,8 +17,8 @@ namespace TigerTaxOnline
 
         public bool IsEnabled { get; set; }
 
-        public virtual Record Record { get; set; }
+        public virtual Record Records { get; set; }
 
-        public virtual Rule Rule { get; set; }
+        public virtual Rule Rules { get; set; }
     }
 }

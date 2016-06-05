@@ -13,6 +13,11 @@ namespace TigerTaxOnline.Controllers
             return View();
         }
 
+        public ActionResult CategorySetup()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -24,6 +29,12 @@ namespace TigerTaxOnline.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        
+        [Authorize]
+        public ActionResult PayrollWelcome()
+        {
             return View();
         }
     }
