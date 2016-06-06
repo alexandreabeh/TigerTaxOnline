@@ -200,11 +200,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Models\AssignedRule.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Entry.cs" />
+    <Compile Include="Models\PayrollCycle.cs" />
+    <Compile Include="Models\PayrollEntry.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Classes\TigerTaxOnlineModel.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Classes\Security.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -229,6 +233,7 @@
     <Content Include="Content\Images\neourban_hipster_office_desktop_markus_splske.jpg" />
     <Content Include="Content\LandingPage.css" />
     <Content Include="Content\Icons\favicon.ico" />
+    <Content Include="Content\TigerTax.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -284,8 +289,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Home\CategorySetup.cshtml" />
-    <Content Include="Views\Home\PayrollWelcome.cshtml" />
+    <Content Include="Views\Payroll\Index.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Payroll\ManageEmployees.cshtml" />
+    <Content Include="Views\Payroll\CreateEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

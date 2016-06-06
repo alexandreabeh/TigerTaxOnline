@@ -8,7 +8,6 @@ namespace TigerTaxOnline.Classes
 
     public partial class Entry
     {
-        [Key]
         public int EntryId { get; set; }
 
         public int RecordId { get; set; }
@@ -29,8 +28,8 @@ namespace TigerTaxOnline.Classes
         [StringLength(1000)]
         public string Other { get; set; }
 
-        public virtual Category Categories { get; set; }
+        public virtual Category Category { get; set; }
 
-        public virtual Record Records { get; set; }
+        public virtual Record Record { get; set; }
     }
 }

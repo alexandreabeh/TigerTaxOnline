@@ -15,7 +15,6 @@ namespace TigerTaxOnline.Classes
             Entries = new HashSet<Entry>();
         }
 
-        [Key]
         public int CategoryId { get; set; }
 
         public int RecordId { get; set; }
@@ -36,9 +35,9 @@ namespace TigerTaxOnline.Classes
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Category> Categories1 { get; set; }
 
-        public virtual Category Categories2 { get; set; }
+        public virtual Category Category1 { get; set; }
 
-        public virtual Record Records { get; set; }
+        public virtual Record Record { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entry> Entries { get; set; }

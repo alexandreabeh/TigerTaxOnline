@@ -9,7 +9,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <a class="btn-info btn-primary btn-lg">TigerTax</a>
-            <a href="@Url.Action("PayrollWelcome", "Home")" class="btn-info btn-primary btn-lg">TigerTax Payroll</a>
+            <a href="@Url.Action("Index", "Payroll")" class="btn-info btn-primary btn-lg">TigerTax Payroll</a>
         }
         else
         {

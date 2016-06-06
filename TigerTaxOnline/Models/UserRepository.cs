@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TigerTaxOnline.Classes;
 using TigerTaxOnline.Models;
+using System;
+using System.Web;
 
 namespace TigerTaxOnline.Models
 {
     public class UserRepository : IUserRepository
     {
         internal TigerTaxOnlineModel Dal = new TigerTaxOnlineModel();
-        
+
         public void CreateNewUser(string firstName, string lastName, string username, string email, string password)
         {
             Guid userGuid = Guid.NewGuid();
@@ -37,6 +39,18 @@ namespace TigerTaxOnline.Models
         public void UpdateUser()
         {
             
+        }
+
+        public IEnumerable<Employee> GetEmployees()
+        {
+            //int userId = (int)HttpContext.Current.Session["UserId"];
+            //return Dal.Employees.Where(e => e.UserId == userId);
+            return Dal.Employees.ToList();
+        }
+
+        public void CreateNewEmployee(Employee employee)
+        {
+            Dal.Employees.Add(employee);
         }
     }
 }

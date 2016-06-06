@@ -8,7 +8,6 @@ namespace TigerTaxOnline.Classes
 
     public partial class AssignedRule
     {
-        [Key]
         public int AssignedRuleId { get; set; }
 
         public int RecordId { get; set; }
@@ -17,8 +16,8 @@ namespace TigerTaxOnline.Classes
 
         public bool IsEnabled { get; set; }
 
-        public virtual Record Records { get; set; }
+        public virtual Record Record { get; set; }
 
-        public virtual Rule Rules { get; set; }
+        public virtual Rule Rule { get; set; }
     }
 }

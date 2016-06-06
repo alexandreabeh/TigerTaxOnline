@@ -6,37 +6,26 @@ namespace TigerTaxOnline.Classes
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Rule
+    [Table("PayrollCycle")]
+    public partial class PayrollCycle
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rule()
+        public PayrollCycle()
         {
-            AssignedRules = new HashSet<AssignedRule>();
+            PayrollEntries = new HashSet<PayrollEntry>();
         }
 
-        public int RuleId { get; set; }
+        public int PayrollCycleId { get; set; }
 
         public int UserId { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string FieldToMatch { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string DegreeOfMatch { get; set; }
-
-        [Required]
-        [StringLength(1000)]
-        public string StringToMatch { get; set; }
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AssignedRule> AssignedRules { get; set; }
-
-        public virtual User User { get; set; }
+        public virtual ICollection<PayrollEntry> PayrollEntries { get; set; }
     }
 }

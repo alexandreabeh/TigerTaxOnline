@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TigerTaxOnline.Classes.Employee>
+@{
+    ViewBag.Title = "Manage Employees";
+}
+<head>
+    <link href="@Url.Content("~/Content/TigerTax.css")" rel="stylesheet" type="text/css"/>
+</head>
+<h2>Manage Employees</h2>
+
+<div class="row">
+    <div class="space inline col-lg-10 col-md-10 col-xs-7" style="vertical-align: middle;">
+        <h5>Create, update and delete information about your employees.</h5>
+    </div><div class="space inline col-lg-2 col-md-2 col-xs-5">
+        <a href="@Url.Action("CreateEmployee", "Payroll")" class="btn-info btn-primary btn-sm text-center">Add Employee</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th class="col-xs-4">First Name</th>
+            <th class="col-xs-4">Last Name</th>
+            <th class="col-xs-2">Active</th>
+            <th class="col-xs-1"></th>
+            <th class="col-xs-1"></th>
+        </tr>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td class="col-xs-4">@Html.DisplayFor( e => employee.FirstName )</td>
+                <td class="col-xs-4">@Html.DisplayFor( e => employee.LastName )</td>
+                <td class="col-xs-2">
+                    @if(employee.IsActive)
+                    {
+                        @Html.Encode("Yes");
+                    }
+                    else
+                    {
+                        @Html.Encode("No");
+                    }
+                </td>
+                <td class="col-xs-1"><i class="fa fa-pencil"></i></td>
+                <td class="col-xs-1"><i class="fa fa-trash"></i></td>
+            </tr>
+        }
+    </table>
+</div>
