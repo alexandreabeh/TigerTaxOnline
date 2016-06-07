@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TigerTaxOnline.Classes;
 using TigerTaxOnline.Models;
+using Microsoft.AspNet.Identity;
 
 namespace TigerTaxOnline.Controllers
 {
@@ -24,17 +25,33 @@ namespace TigerTaxOnline.Controllers
             return View(_userRepository.GetEmployees());
         }
 
-        public ActionResult CreateEmployee()
+        public ActionResult CreateEmployee(Employee employee)
         {
-            var employee = new Employee();
             employee.IsActive = true;
             return View(employee);
         }
 
-        public ActionResult AddEmployee()
+        [HttpPost]
+        public ActionResult AddEmployee(Employee employee)
         {
+            employee.UserId = (int)Session["UserId"];
 
-            return View("Index");
+            if(ModelState.IsValid)
+            {
+                _userRepository.CreateNewEmployee(employee);
+            }
+            else
+            {
+                return View("CreateEmployee", employee);
+            }
+
+            return RedirectToAction("ManageEmployees");
+        }
+
+        public ActionResult DeleteEmployee(int employeeId)
+        {
+            _userRepository.DeleteEmployee(employeeId);
+            return RedirectToAction("ManageEmployees");
         }
     }
 }

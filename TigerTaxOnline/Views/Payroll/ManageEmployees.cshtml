@@ -39,8 +39,14 @@
                         @Html.Encode("No");
                     }
                 </td>
-                <td class="col-xs-1"><i class="fa fa-pencil"></i></td>
-                <td class="col-xs-1"><i class="fa fa-trash"></i></td>
+                <td class="col-xs-1">
+                    <i class="fa fa-pencil"></i>
+                </td>
+                <td class="col-xs-1">
+                    <a href="@Url.Action("DeleteEmployee", "Payroll", new { employeeId = employee.EmployeeId })">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
             </tr>
         }
     </table>

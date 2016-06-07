@@ -7,6 +7,7 @@
 
 @using (Html.BeginForm("AddEmployee", "Payroll", FormMethod.Post, new {@class="form-horizontal"}))
 {
+    @Html.ValidationSummary()
     <div class="form-group">
         <div class="col-sm-2 control-label">
             @Html.LabelFor(model => model.FirstName)
@@ -16,7 +17,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group">     
         <div class="col-sm-2 control-label">
             @Html.LabelFor(model => model.LastName)
         </div>

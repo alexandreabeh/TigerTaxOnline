@@ -51,6 +51,14 @@ namespace TigerTaxOnline.Models
         public void CreateNewEmployee(Employee employee)
         {
             Dal.Employees.Add(employee);
+            Dal.SaveChanges();
+        }
+
+        public void DeleteEmployee(int employeeId)
+        {
+            var employee = Dal.Employees.Where(e => e.EmployeeId == employeeId).FirstOrDefault();
+            Dal.Employees.Remove(employee);
+            Dal.SaveChanges();
         }
     }
 }

@@ -33,7 +33,9 @@ namespace TigerTaxOnline.Classes
         public bool IsActive { get; set; }
 
         [Display(Name ="Phone Number")]
-        public int? PhoneNumber { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Phone number")]
+        public string PhoneNumber { get; set; }
 
         [StringLength(1000)]
         [Display(Name ="Notes")]

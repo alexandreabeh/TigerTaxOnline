@@ -63,7 +63,7 @@ namespace TigerTaxOnline.Controllers
 
                 if (Request.QueryString["ReturnUrl"] == null)
                 {
-                    Session.Add("UserId", user.UserId);
+                    Session["UserId"] = user.UserId;
                     returnTo = "../Home/Index";
                 }
                 else
