@@ -1,10 +1,12 @@
 ﻿@model TigerTaxOnline.Classes.Employee
-<h2>@ViewBag.Title</h2>
+@{
+    ViewBag.Title = "Modify An Employee";
+}
 
-@using (Html.BeginForm("AddEmployee", "Payroll", FormMethod.Post, new { @class = "form-horizontal" }))
+<h2>Modify An Employee</h2>
+
+@using (Html.BeginForm("EditEmployee", "Payroll", FormMethod.Post, new { @class = "form-horizontal" }))
 {
-    @Html.AntiForgeryToken()
-    <hr />
     @Html.ValidationSummary()
     <div class="form-group">
         <div class="col-sm-2 control-label">
@@ -15,7 +17,7 @@
         </div>
     </div>
 
-    <div class="form-group">     
+    <div class="form-group">
         <div class="col-sm-2 control-label">
             @Html.LabelFor(model => model.LastName)
         </div>

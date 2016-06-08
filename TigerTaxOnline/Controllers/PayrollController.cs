@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using TigerTaxOnline.Classes;
 using TigerTaxOnline.Models;
 using Microsoft.AspNet.Identity;
+using System.Net;
 
 namespace TigerTaxOnline.Controllers
 {
@@ -21,13 +22,16 @@ namespace TigerTaxOnline.Controllers
 
         public ActionResult ManageEmployees()
         {
-            //TODO: must be restricted to all employees belonging to this user.
-            return View(_userRepository.GetEmployees());
+            var userId = (int)Session["UserId"];
+            var employees = _userRepository.Dal.Employees.Where(e => e.UserId == userId);
+            
+            return View(employees);
         }
 
         public ActionResult CreateEmployee(Employee employee)
         {
             employee.IsActive = true;
+            ViewBag.Title = "Add An Employee";
             return View(employee);
         }
 
@@ -47,6 +51,46 @@ namespace TigerTaxOnline.Controllers
 
             return RedirectToAction("ManageEmployees");
         }
+
+        public ActionResult UpdateEmployee(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Employee employee = _userRepository.Dal.Employees.Find(id);
+
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(employee);
+        }
+
+        [HttpPost, ActionName("UpdateEmployee")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateEmployeePost(Employee employee)
+        {
+            var employeeToUpdate = _userRepository.Dal.Employees.Find(employee.EmployeeId);
+
+            if (ModelState.IsValid)
+            {
+                employeeToUpdate.FirstName = employee.FirstName;
+                employeeToUpdate.LastName = employee.LastName;
+                employeeToUpdate.PhoneNumber = employee.PhoneNumber;
+                employeeToUpdate.IsActive = employee.IsActive;
+                employeeToUpdate.Notes = employee.Notes;
+
+                _userRepository.Dal.SaveChanges();
+
+                return RedirectToAction("ManageEmployees");
+            }
+
+            return View("UpdateEmployee");
+        }
+
 
         public ActionResult DeleteEmployee(int employeeId)
         {

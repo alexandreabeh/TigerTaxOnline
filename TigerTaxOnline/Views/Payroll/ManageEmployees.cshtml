@@ -40,7 +40,9 @@
                     }
                 </td>
                 <td class="col-xs-1">
-                    <i class="fa fa-pencil"></i>
+                    <a href="@Url.Action("UpdateEmployee", "Payroll", new { id = employee.EmployeeId })" >
+                        <i class="fa fa-pencil"></i>
+                    </a>
                 </td>
                 <td class="col-xs-1">
                     <a href="@Url.Action("DeleteEmployee", "Payroll", new { employeeId = employee.EmployeeId })">

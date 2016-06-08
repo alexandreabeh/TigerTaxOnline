@@ -293,6 +293,8 @@
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Payroll\ManageEmployees.cshtml" />
     <Content Include="Views\Payroll\CreateEmployee.cshtml" />
+    <Content Include="Views\Payroll\EditEmployee.cshtml" />
+    <Content Include="Views\Payroll\UpdateEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

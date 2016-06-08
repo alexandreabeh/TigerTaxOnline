@@ -7,6 +7,7 @@ using TigerTaxOnline.Classes;
 using TigerTaxOnline.Models;
 using System;
 using System.Web;
+using System.Data.Entity;
 
 namespace TigerTaxOnline.Models
 {
@@ -43,8 +44,7 @@ namespace TigerTaxOnline.Models
 
         public IEnumerable<Employee> GetEmployees()
         {
-            //int userId = (int)HttpContext.Current.Session["UserId"];
-            //return Dal.Employees.Where(e => e.UserId == userId);
+            //TODO: may not need this at all
             return Dal.Employees.ToList();
         }
 
@@ -58,6 +58,12 @@ namespace TigerTaxOnline.Models
         {
             var employee = Dal.Employees.Where(e => e.EmployeeId == employeeId).FirstOrDefault();
             Dal.Employees.Remove(employee);
+            Dal.SaveChanges();
+        }
+
+        public void EditEmployee(Employee employee)
+        {
+            
             Dal.SaveChanges();
         }
     }

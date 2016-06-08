@@ -16,5 +16,6 @@ namespace TigerTaxOnline.Models
         IEnumerable<Employee> GetEmployees();
         void CreateNewEmployee(Employee employee);
         void DeleteEmployee(int employeeId);
+        void EditEmployee(Employee employee);
     }
 }
